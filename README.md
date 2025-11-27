@@ -108,7 +108,8 @@ The API is documented using auto-generated Swagger UI at: `http://localhost:8000
 **Description:** Quick check that the app is running.
 
 Expected response:
-**{ "status": "OK" }**
+<img width="396" height="128" alt="Screenshot 2025-11-27 220805" src="https://github.com/user-attachments/assets/54444bec-fde3-46e7-8992-f0de322b9bdc" />
+
 
 ### 2.2 Sign up
 
@@ -134,8 +135,8 @@ Expected response (201):
 If the email already exists, you should get:
 
 
-**"detail": "Email already registered."**
-```
+<img width="415" height="123" alt="Screenshot 2025-11-27 220949" src="https://github.com/user-attachments/assets/4dbb0a50-3409-4651-ab4e-37dff0ea83c5" />
+
 
 
 ### 2.3 Login via Swagger **Authorize**
@@ -182,12 +183,8 @@ Example request body:
 Example response:
 
 
-**{
-  "id": 1,
-  "text": "Today we discussed the upcoming project deadlines for the AI Summary Sentiment Analyzer. ...",
-  "summary": "Short summary of the discussion ...",
-  "sentiment": "Positive"
-}**
+<img width="1624" height="181" alt="Screenshot 2025-11-27 223714" src="https://github.com/user-attachments/assets/39d25628-67d2-4d29-a21c-eaf37197152d" />
+
 
 
 ### 2.5 List contents
@@ -197,22 +194,7 @@ Example response:
 
 Returns all contents belonging to the logged-in user:
 
-
-**[
-  {
-    "id": 1,
-    "text": "...",
-    "summary": "...",
-    "sentiment": "Positive"
-  },
-  {
-    "id": 2,
-    "text": "...",
-    "summary": "...",
-    "sentiment": "Neutral"
-  }
-]**
-
+<img width="1645" height="435" alt="Screenshot 2025-11-27 220043" src="https://github.com/user-attachments/assets/b370dc6a-9ef7-416b-9b3d-81e44b05d171" />
 
 ---
 
@@ -223,6 +205,7 @@ Returns all contents belonging to the logged-in user:
 
 If the item exists and belongs to the current user, it returns a single content object.  
 If not, returns `404 Content not found`.
+<img width="321" height="104" alt="Screenshot 2025-11-27 224942" src="https://github.com/user-attachments/assets/041567ad-6bbb-4e7e-b0e5-807b74e5590c" />
 
 ---
 
@@ -283,7 +266,7 @@ This ensures that on each push to `main`:
 - The code at least installs successfully.
 - A basic test suite runs (once you add `pytest` tests).
 ---
-## 13. Deployment Architecture on GCP (Theoretical)
+## 5. Deployment Architecture on GCP (Theoretical)
 ![GCP Deployment Architecture - Intelligent Content API](https://github.com/user-attachments/assets/7a3da7d8-c940-4ea8-9e05-b1a635f9f739)
 
 The client sends HTTPS requests to API Gateway, which routes traffic to the containerized FastAPI service running on Cloud Run. The service persists data in Cloud SQL (PostgreSQL), reads secrets and configuration from Secret Manager, and calls the external OpenAI API for summarization and sentiment analysis. Logs and metrics are centralized via Cloud Logging / Monitoring.
