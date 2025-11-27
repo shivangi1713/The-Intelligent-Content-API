@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+
+SQLAlchemy
+psycopg2-binary
+
+python-dotenv
+python-jose[cryptography]
+passlib
+
+pydantic[email]
+python-multipart
+
+openai>=1.60.0
