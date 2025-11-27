@@ -108,11 +108,7 @@ The API is documented using auto-generated Swagger UI at: `http://localhost:8000
 **Description:** Quick check that the app is running.
 
 Expected response:
-
-```json
-{ "status": "OK" }
-```
-
+**{ "status": "OK" }**
 
 ### 2.2 Sign up
 
@@ -130,19 +126,19 @@ Example body:
 
 Expected response (201):
 
-```json
-{
+
+**{
   "id": 1,
   "email": "test@example.com"
-}
-```
+}**
+
 
 If the email already exists, you should get:
 
-```json
-{
+
+**{
   "detail": "Email already registered."
-}
+}**
 ```
 
 
@@ -166,12 +162,12 @@ Swagger will:
 
 You can also manually call `POST /login` if you want to see the raw JSON:
 
-```json
-{
+
+**{
   "access_token": "<JWT_TOKEN>",
   "token_type": "bearer"
-}
-```
+}**
+
 
 
 ### 2.4 Create content (summary + sentiment)
@@ -189,14 +185,14 @@ Example request body:
 
 Example response:
 
-```json
-{
+
+**{
   "id": 1,
   "text": "Today we discussed the upcoming project deadlines for the AI Summary Sentiment Analyzer. ...",
   "summary": "Short summary of the discussion ...",
   "sentiment": "Positive"
-}
-```
+}**
+
 
 ### 2.5 List contents
 
@@ -205,8 +201,8 @@ Example response:
 
 Returns all contents belonging to the logged-in user:
 
-```json
-[
+
+**[
   {
     "id": 1,
     "text": "...",
@@ -219,8 +215,8 @@ Returns all contents belonging to the logged-in user:
     "summary": "...",
     "sentiment": "Neutral"
   }
-]
-```
+]**
+
 
 ---
 
