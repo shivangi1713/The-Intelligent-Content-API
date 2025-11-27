@@ -11,7 +11,8 @@ This project is a small FastAPI backend that lets users:
    - a short **summary**
    - a simple **sentiment**: `Positive`, `Negative`, or `Neutral`  
 5. **List**, **fetch**, and **delete** their own contents
-It implements the full assignment: authentication, AI integration, database persistence, Docker, CI, and a GCP deployment plan.
+
+   It implements the full assignment: authentication, AI integration, database persistence, Docker, CI, and a GCP deployment plan.
 ---
 ## 1. Setup Instructions
 
