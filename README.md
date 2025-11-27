@@ -127,18 +127,14 @@ Example body:
 Expected response (201):
 
 
-**{
-  "id": 1,
-  "email": "test@example.com"
-}**
+**"id": 1,
+  "email": "test@example.com"**
 
 
 If the email already exists, you should get:
 
 
-**{
-  "detail": "Email already registered."
-}**
+**"detail": "Email already registered."**
 ```
 
 
