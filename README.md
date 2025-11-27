@@ -21,7 +21,7 @@ Create a .env file in the project root:
 
 ```bash
    # Database
-DATABASE_URL=postgresql+psycopg2://shivangi:shiku@localhost:5432/ai_analyzer
+DATABASE_URL=postgresql+psycopg2://user:password@localhost:5432/ai_analyzer
 
 # Auth
 JWT_SECRET_KEY=_KX6uBnw1H2y1sG3AjU4v9A3pGZgqLtaF3k8jZqs
@@ -97,7 +97,6 @@ The app will be available at:
    `GET /contents/{id}` and `DELETE /contents/{id}`.
 
 This covers authentication, authorization, database persistence, and AI-powered text analysis
----
 
 ## 2. API Documentation
 
@@ -114,7 +113,6 @@ Expected response:
 { "status": "OK" }
 ```
 
----
 
 ### 2.2 Sign up
 
@@ -147,7 +145,6 @@ If the email already exists, you should get:
 }
 ```
 
----
 
 ### 2.3 Login via Swagger **Authorize**
 
@@ -176,7 +173,6 @@ You can also manually call `POST /login` if you want to see the raw JSON:
 }
 ```
 
----
 
 ### 2.4 Create content (summary + sentiment)
 
@@ -201,8 +197,6 @@ Example response:
   "sentiment": "Positive"
 }
 ```
-
----
 
 ### 2.5 List contents
 
@@ -298,6 +292,8 @@ This ensures that on each push to `main`:
 - A basic test suite runs (once you add `pytest` tests).
 ---
 ## 13. Deployment Architecture on GCP (Theoretical)
+![GCP Deployment Architecture - Intelligent Content API](https://github.com/user-attachments/assets/7a3da7d8-c940-4ea8-9e05-b1a635f9f739)
+
 The client sends HTTPS requests to API Gateway, which routes traffic to the containerized FastAPI service running on Cloud Run. The service persists data in Cloud SQL (PostgreSQL), reads secrets and configuration from Secret Manager, and calls the external OpenAI API for summarization and sentiment analysis. Logs and metrics are centralized via Cloud Logging / Monitoring.
 
 This architecture is fully managed, scales automatically, and keeps secrets out of the codebase.
